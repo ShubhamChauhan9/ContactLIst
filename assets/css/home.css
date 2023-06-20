@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#page-heading {
+    text-align: center;
+    margin-top: 25px;
+    color: gray;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
+}
+
+#contact-outer-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: 2px;
+}
+
+#contact-outer-div div {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.name_phone_div {
+    height: 30px;
+    background-color: rgb(137, 137, 214);
+    margin: 2px;
+    padding: 2px;
+    color: aliceblue;
+}
+
+.name,
+.phone {
+    display: inline-block;
+    width: 48%;
+}
+
+.name:hover,
+.phone:hover {
+    cursor: pointer;
+    background-color: lightslategray;
+}
+
+input {
+    height: 30px;
+    width: 23%;
+    border: none;
+    border-bottom: 2px solid grey;
+    margin-top: 10px;
+}
+
+button {
+    height: 30px;
+    margin-top: 10px;
+    border: 2px solid rgb(137, 137, 214);
+    border-radius: 5px;
+    background-color: rgb(241, 203, 176);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: lightslategray;
+}
+
+form {
+    text-align: center;
+}

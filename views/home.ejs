@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/home.css">
+    <title>
+        <!-- reponse has locals as global property which is an object and has views which has title as one of the property to which the value has been set from the server side -->
+        <%= locals.title %>;
+    </title>
+</head>
+
+<body>
+    <!-- <%= title %> -->
+    <h1 id="page-heading">
+        <i class="fas fa-address-book"></i> My Contacts List !
+    </h1>
+    <div id="center">
+        <div id="contact-outer-div">
+
+            <%
+                for(let i of Contact){%>
+
+                <div class="name_phone_div">
+                    <span class="name">
+                        <%= i.name%>
+                    </span>
+                    <span class="phone">
+                        <%= i.phone%>
+                        <a href="/delete-contact/?id=<%= i._id%>">
+                            <i class="fas fa-window-close"></i>
+                        </a>
+                     </span>
+                </div>
+
+                <%}
+                
+                %>
+
+        </div>
+    </div>
+    <!-- action attribute signifies the route where we want to send the data -->
+    <form action="/create-contact" method="post">
+        <!-- name attribute stands for naming the keys that we need to send as the key value pair in object -->
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="number" name="phone" placeholder="Enter Phone" required>
+        <button type="submit">Add</button>
+
+    </form>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
